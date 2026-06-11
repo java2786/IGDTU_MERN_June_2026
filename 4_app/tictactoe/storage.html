@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="head"></h2>
+    <input id="name" placeholder="Enter your name"/>
+    <br/>
+    <button id="saveBtn">Save name</button>
+    <button id="getBtn">Get name</button>
+
+    <script>
+        let input = document.getElementById("name");
+        let saveBtn = document.getElementById("saveBtn");
+        let getBtn = document.getElementById("getBtn");
+        let h2Head = document.getElementById("head");
+
+        saveBtn.addEventListener("click", function(){
+            if(input.value!==""){
+                localStorage.setItem("user", input.value)
+            }
+        })
+        getBtn.addEventListener("click", function(){
+            let value = localStorage.getItem("user")
+            h2Head.innerText = value;
+        })
+        
+        
+    </script>
+
+</body>
+</html>

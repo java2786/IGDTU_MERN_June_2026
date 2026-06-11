@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tic Tac Toe Game</h1>
+            <p>JavaScript Game Development Project</p>
+        </header>
+        <section class="scoreboard">
+            <div class="score-card">
+                <h3>Player X</h3>
+                <h2 id="playerXScore">0</h2>
+            </div>
+            <div class="score-card">
+                <h3>Draws</h3>
+                <h2 id="drawScore">0</h2>
+            </div>
+            <div class="score-card">
+                <h3>Player O</h3>
+                <h2 id="playerOScore">0</h2>
+            </div>
+            <div class="score-card">
+                <h3>Matches</h3>
+                <h2 id="totalMatches">0</h2>
+            </div>
+        </section>
+        <section class="status-section">
+            <h2 id="gameStatus">Player X Turn</h2>
+        </section>
+        <section class="game-board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </section>
+        <section class="action-section">
+            <button id="resetBtn">
+                Reset Game
+            </button>
+            <button>
+                Reset Scoreboard
+            </button>
+        </section>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

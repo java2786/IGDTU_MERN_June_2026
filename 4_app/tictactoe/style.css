@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+.scoreboard {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.score-card {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.score-card h2 {
+    margin-top: 10px;
+    font-size: 32px;
+}
+
+.status-section {
+    margin-bottom: 25px;
+}
+
+.status-section h2 {
+    color: #0d6efd;
+    min-height: 40px;
+}
+
+.game-board {
+    width: 330px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    padding: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    user-select: none;
+}
+
+.cell:hover {
+    background: #f1f5f9;
+}
+
+.x {
+    color: #0d6efd;
+}
+
+.o {
+    color: #dc3545;
+}
+
+.action-section {
+    margin-top: 30px;
+}
+
+#resetBtn {
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#resetBtn:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 500px) {
+
+    .game-board {
+        width: 270px;
+        grid-template-columns: repeat(3, 80px);
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+    }
+}
