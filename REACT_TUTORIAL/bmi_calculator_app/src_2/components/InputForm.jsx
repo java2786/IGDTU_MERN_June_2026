@@ -1,7 +1,9 @@
 // import { useState } from "react";
 
 function InputForm(props) {
-    // let name, setName = props;
+    // props.setHeight("demo")
+    // props.userHeight = "123";
+
 
     return (
         <div className="form-card">
@@ -38,7 +40,12 @@ function InputForm(props) {
                     value={props.weight} id="weight" placeholder="e.g. 65" />
             </div>
 
-            <button className="calculate-btn" onClick={props.onCalculate}>
+            <button className="calculate-btn" onClick={function (e) {
+                console.log(props.name)
+                console.log(props.height)
+                console.log(props.weight)
+                
+            }}>
                 Calculate BMI
             </button>
         </div>

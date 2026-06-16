@@ -11,16 +11,13 @@ import { useState } from "react";
 
 function App() {
     // const [varName, setVarName] = useState(initialValue);
-    const [name, setName] = useState("")
-    const [height, setHeight] = useState("")
-    const [weight, setWeight] = useState("")
+    const [name, setName] = useState("Ramesh")
+    const [height, setHeight] = useState("172")
+    const [weight, setWeight] = useState("71")
 
     const [bmiResult, setBmiResult] = useState(null)
     const [bmiCategory, setBmiCategory] = useState("")
 
-    const [errors, setErrors] = useState({})
-
-    /* { name: Please enter name, height: Please enter valid height} */
     function getBmiCategory(bmi) {
         if (bmi < 18.5) {
             return "Underweight"
@@ -34,13 +31,6 @@ function App() {
     }
 
     function calculateBmi() {
-
-        let isValid = validate();
-
-        if(isValid == false){
-            return;
-        }
-
         // console.log(typeof(height))
         let h = parseFloat(height) / 100;
         let w = parseFloat(weight);
@@ -55,19 +45,6 @@ function App() {
         setBmiCategory(category)
     }
 
-    function validate(){
-        let errors = {};
-
-        if(!name.trim()){
-            console.log("Name is not available")
-            errors.name = "Please enter name"
-        }
-
-        setErrors(errors)
-
-        return Object.keys(errors).length===0
-
-    }
     return (
         <div className="container">
             <h1>My BMI Calculator</h1>
