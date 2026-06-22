@@ -1,7 +1,4 @@
-// const jobs = [  
-import { Job } from "../types";  
-  
-const jobs: Job[] = [
+const jobs = [
   {  
     id: "job001",  
     title: "Backend Developer",  
@@ -47,5 +44,33 @@ const jobs: Job[] = [
     createdAt: "2026-06-07"  
   }  
 ];  
-  
-export default jobs;  
+
+let nextId = 5;
+
+const Job = {
+    find: function(){return jobs;},
+    findById: function(id){
+        // forEach
+        // filter
+        // for
+
+        return jobs.find(function(job){
+            if(job.id == "job00"+id){
+                return true;
+            }
+        })
+    },
+    create: (data)=>{
+        const newJob = {
+            id: "job00"+nextId,
+            ...data,
+            createdAt: new Date().toISOString().substring(0,10)
+        }
+        nextId++;
+        jobs.push(newJob);
+        return newJob;
+    }
+}
+
+module.exports = Job
+ 

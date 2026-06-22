@@ -1,10 +1,28 @@
-import jobs from "../data/jobs";  
+import { useState, useEffect } from "react";  
 import candidate from "../data/candidate";  
+import { Job } from "../types";  
   
-function JobDetail({ jobId, onBack }) {  
-  const job = jobs.find((j) => j.id === jobId);  
+interface JobDetailProps {  
+  jobId: string;  
+  onBack: () => void;  
+}  
+  
+function JobDetail({ jobId, onBack }: JobDetailProps) {  
+  const [job, setJob] = useState<Job | null>(null);  
+  const [loading, setLoading] = useState<boolean>(true);  
+  
+  useEffect(() => {  
+    fetch(`http://localhost:3000/api/jobs/${jobId}`)  
+      .then((res) => res.json())  
+      .then((data: Job) => {  
+        setJob(data);  
+        setLoading(false);  
+      });  
+  }, [jobId]);  
+  
   const application = candidate.applications.find((a) => a.jobId === jobId);  
   
+  if (loading) return <p>Loading job details...</p>;  
   if (!job) return <p>Job not found.</p>;  
   
   return (  

@@ -1,0 +1,183 @@
+/* ==========================================================================
+   1. GLOBAL VARIABLES & DARK THEME CONFIGURATION
+   ========================================================================== */
+:root {
+  /* Rich Dark Theme Palette */
+  --page-background: #0f172a;     /* Deep slate blue/black for the screen background */
+  --card-background: #1e293b;     /* Slightly lighter charcoal slate for content blocks */
+  --heading-color: #f8fafc;       /* Bright, clean white for titles and headings */
+  --body-text-color: #94a3b8;     /* Soft slate gray for readable body text */
+  --border-color: #334155;        /* Crisp, subtle borders separating elements */
+  
+  /* Brand/Accent Styling */
+  --accent-color: #818cf8;         /* Vibrant Indigo neon for links and highlights */
+  --accent-bg-pill: rgba(129, 140, 248, 0.15); /* Translucent indigo tag fill */
+  --accent-border-pill: rgba(129, 140, 248, 0.4); /* Border color for tags */
+
+  /* Clean Typography Stacks */
+  --font-sans: system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+
+  /* Global Body Definitions */
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--body-text-color);
+  background-color: var(--page-background);
+}
+
+/* Simple Reset: Forces layout calculations to include padding inside elements */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--page-background);
+}
+
+
+/* ==========================================================================
+   2. MAIN CANVAS LAYOUT
+   ========================================================================== */
+#root {
+  width: 100%;
+  max-width: 1050px;       /* Keeps the app content neat and centered on desktop */
+  margin: 0 auto;          /* Standard trick to center a block element horizontally */
+  min-height: 100vh;       /* Spans full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-background);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+
+
+/* ==========================================================================
+   3. TYPOGRAPHY & TEXT RULES (FIXES CONTRAST & ALIGNMENT)
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+}
+
+/* Left-align text blocks so content scans naturally like a book */
+p, span, div, li {
+  color: var(--body-text-color);
+  text-align: left;
+}
+
+/* Section Main Titles (e.g., "Open Positions") */
+h2 {
+  font-size: 22px;
+  margin: 32px 32px 16px 32px;
+}
+
+
+/* ==========================================================================
+   4. JOB LISTINGS & DETAILED CARDS
+   ========================================================================== */
+/* Targets structural containers holding job details */
+#root div div {
+  background-color: #111827;       /* Dark obsidian black background inside cards */
+  border: 1px solid var(--border-color);
+  border-radius: 12px;             /* Smooth rounded corners for structural blocks */
+  padding: 24px;
+  margin: 0 32px 20px 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2); /* Soft shadow depth */
+  
+  /* Smooth animation transition when a user hovers over a card */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover Interactive State for Cards */
+#root div div:hover {
+  transform: translateY(-2px);    /* Lifts the card up slightly */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4); /* Makes shadow richer */
+  border-color: var(--accent-border-pill);     /* Lights up outline border color */
+}
+
+/* Standardizing list formatting inside detail pages */
+ul {
+  padding-left: 20px;
+  margin: 12px 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+
+/* ==========================================================================
+   5. SKILL TAGS & BADGES (Node.js, React, SQL, etc.)
+   ========================================================================== */
+code, 
+.counter,
+span[class*="tag"], 
+span[class*="badge"] {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  
+  /* Applying colorful high-contrast badge styles */
+  background-color: var(--accent-bg-pill);
+  color: var(--accent-color);
+  border: 1px solid var(--accent-border-pill);
+  
+  padding: 6px 12px;
+  border-radius: 20px;     /* High radius values turn standard blocks into pills */
+  display: inline-block;
+  margin-right: 8px;
+  margin-top: 8px;
+}
+
+
+/* ==========================================================================
+   6. DARK NAVIGATION HEADER & ACTION BUTTONS
+   ========================================================================== */
+/* Simple fix for the dark navigation header container seen at the top */
+#root div:first-child {
+  background-color: #0f172a; /* Deep matching slate background tone */
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0;
+  margin: 0 0 16px 0;
+  transform: none;
+  box-shadow: none;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Keeps the "JobFit AI" header text fully white on top of the dark container */
+#root div:first-child h1,
+#root div:first-child font,
+#root div:first-child span {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Clean transparent action buttons (Jobs, My Profile) */
+button, 
+.button, 
+[role="button"] {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Light up buttons slightly when hovered */
+button:hover, 
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--accent-color);
+}

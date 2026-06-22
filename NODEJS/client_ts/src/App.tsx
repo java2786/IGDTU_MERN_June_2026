@@ -3,12 +3,18 @@ import JobList from "./pages/JobList";
 import JobDetail from "./components/JobDetail";  
 import CandidateProfile from "./components/CandidateProfile";  
 import "./App.css";  
-  
+
+type View = "jobs" | "detail" | "profile";  
+
 function App() {  
-  const [view, setView] = useState("jobs");  
-  const [selectedJobId, setSelectedJobId] = useState(null);  
-  
-  const handleSelectJob = (jobId) => {  
+  // const [view, setView] = useState("jobs");  
+  const [view, setView] = useState<View>("jobs");  
+  // const [selectedJobId, setSelectedJobId] = useState(null);  
+  const [selectedJobId, setSelectedJobId] = useState<string | null>(null);  
+   
+  // const handleSelectJob = (jobId) => {  
+  const handleSelectJob = (jobId: string) => {  
+
     setSelectedJobId(jobId);  
     setView("detail");  
   };  

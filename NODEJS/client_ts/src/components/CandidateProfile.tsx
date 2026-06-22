@@ -2,7 +2,8 @@ import { useState } from "react";
 import candidate from "../data/candidate";  
   
 function CandidateProfile() {  
-  const [resumeText, setResumeText] = useState(candidate.resumeText);  
+  // const [resumeText, setResumeText] = useState(candidate.resumeText);  
+  const [resumeText, setResumeText] = useState<string>(candidate.resumeText);  
   
   return (  
     <div className="candidate-profile">  

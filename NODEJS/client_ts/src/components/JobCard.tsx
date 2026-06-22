@@ -1,5 +1,13 @@
-function JobCard({ job, onSelect }) {  
-  return (  
+import { Job } from "../types";  
+  
+interface JobCardProps {  
+  job: Job;  
+  onSelect: (jobId: string) => void;  
+}  
+  
+// function JobCard({ job, onSelect }) {  
+function JobCard({ job, onSelect }: JobCardProps) { 
+return (  
     <div className="job-card" onClick={() => onSelect(job.id)}>  
       <h3>{job.title}</h3>  
       <p className="company-name">{job.company} — {job.location}</p>  

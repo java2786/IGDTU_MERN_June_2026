@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Load Data</button>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function(){
+
+            // let p = new Promise(function(resolve, reject){
+            //     let num = 2;
+
+            //     if(num%2==0){
+            //         reject({error_msg: "We do not except evens"})
+            //     } else {
+            //         resolve({message: "hurray"})
+            //     }
+            // })
+
+            // p.then(function(data){
+            //     console.log("resolve")
+            //     console.log(data)
+            // }).catch(function(e){
+            //     console.log("reject")
+            //     console.log(e)
+            // })
+
+
+            // let api = 'https://jsonplaceholder.typicode.com/todos/4';
+            let api = "http://localhost:3000/";
+            fetch(api)
+                .then(response => response.json())
+                .then(json => console.log(json))
+                .then(function(){console.log("a then in chain")})
+                .catch(function(e){
+                    console.log(e)
+                })
+
+        });
+    </script>
+</body>
+</html>

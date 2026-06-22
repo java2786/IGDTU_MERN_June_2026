@@ -1,22 +1,25 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* Modern Luxury & Minimalist Palette */
+  --text: #4a4754;
+  --text-h: #0f0d13;
+  --bg: #faf9f6; /* Soft Alabaster instead of harsh white */
+  --border: #e8e7e3;
+  --code-bg: #f1f0ea;
+  --accent: #6366f1; /* Indigo vibrant accent */
+  --accent-bg: rgba(99, 102, 241, 0.06);
+  --accent-border: rgba(99, 102, 241, 0.3);
+  --social-bg: #ffffff;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* Clean Typography Stack */
+  --sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --heading: Inter, var(--sans);
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, monospace;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
+  font: 17px/1.6 var(--sans);
+  letter-spacing: -0.01em;
   color-scheme: light dark;
   color: var(--text);
   background: var(--bg);
@@ -32,80 +35,163 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --text: #94a3b8;
+    --text-h: #f8fafc;
+    --bg: #0b0f19; /* Obsidian Deep Blue-Gray */
+    --border: #1e293b;
+    --code-bg: #1e293b;
+    --accent: #818cf8;
+    --accent-bg: rgba(129, 140, 248, 0.1);
+    --accent-border: rgba(129, 140, 248, 0.4);
+    --social-bg: #131926;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
   }
 
   #social .button-icon {
-    filter: invert(1) brightness(2);
+    filter: invert(1) brightness(1.5);
   }
+}
+
+/* Universal box-sizing reset for sanity */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  background-color: var(--bg);
+  transition: background-color 0.3s ease;
 }
 
+/* The Canvas Wrapper */
 #root {
-  width: 1126px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1000px; /* Slimmed down for better structural readability */
   margin: 0 auto;
-  text-align: center;
+  padding: 40px 24px;
   border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  gap: 24px; /* Native separation of layout blocks */
 }
 
-h1,
-h2 {
+/* Typography Overhaul */
+h1, h2, h3 {
   font-family: var(--heading);
-  font-weight: 500;
   color: var(--text-h);
+  font-weight: 700; /* Bolder anchors for premium look */
+  letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
 h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
+  font-size: 48px;
+  margin: 24px 0 12px 0;
+  text-align: center;
+  background: linear-gradient(to bottom right, var(--text-h), var(--text));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
   @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+    font-size: 34px;
+    margin: 16px 0;
   }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
 }
 
+h2 {
+  font-size: 22px;
+  margin: 32px 0 12px 0;
+  text-align: left; /* Shift away from raw centering for standard UI content */
+  
+  @media (max-width: 1024px) {
+    font-size: 18px;
+  }
+}
+
+p {
+  margin: 0 0 16px 0;
+  text-align: left; /* Vastly improves natural visual scanning */
+  line-height: 1.65;
+}
+
+/* Header context utility (keeps center alignment ONLY if a paragraph is subtitle-like right under h1) */
+h1 + p {
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--text);
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 40px;
+}
+
+/* Modern Inline Code and Counters */
 code,
 .counter {
   font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
+  font-weight: 500;
+  border-radius: 6px;
   color: var(--text-h);
+  transition: all 0.2s ease;
 }
 
 code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
+  font-size: 0.85em;
+  padding: 3px 6px;
   background: var(--code-bg);
+  border: 1px solid var(--border);
 }
+
+/* Fancy Counter Widget Style */
+.counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  padding: 2px 8px;
+  font-size: 0.9rem;
+}
+
+/* Interactive elements polish (Assuming standard lists/social setups) */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Social Bar Optimization */
+#social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: auto; /* Pushes social bar to the screen bottom if content is short */
+  padding-top: 40px;
+}
+
+#social a, #social button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--social-bg);
+  border: 1px solid var(--border);
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+#social a:hover, #social button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-border);
+}
+

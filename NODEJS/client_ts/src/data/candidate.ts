@@ -1,4 +1,7 @@
-const candidate = {  
+// const candidate = {  
+import { Candidate } from "../types";  
+  
+const candidate: Candidate = {
   id: "user001",  
   name: "Suresh Kumar",  
   email: "suresh@example.com",  
