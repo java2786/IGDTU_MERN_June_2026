@@ -169,3 +169,6 @@ ios/Flutter/flutter_export_environment.sh
 *.mobileprovision
 google-services.json
 DerivedData/
+
+
+resources/MERN*.docx

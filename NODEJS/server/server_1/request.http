@@ -1,0 +1,20 @@
+GET http://localhost:3000/api/jobs
+
+###
+
+GET http://localhost:3000/api/jobs/2
+
+###
+
+POST http://localhost:3000/api/jobs
+Content-Type: application/json
+
+{
+    "title": "Title 1",  
+    "company": "Company 1",  
+    "location": "Location 1",  
+    "remote": "remote",  
+    "skillsRequired": ["python", "javascript", "dart", "java"],  
+    "experienceRequired": 0,  
+    "description": "this is demo description"
+}

@@ -8,6 +8,7 @@ let getAllJobs = (req, res)=>{
 // http://localhost:3000/api/jobs/1
 let getJobById = (req, res)=>{  
     let reqId = req.params.id
+
     const job = Job.findById(reqId)
 
     if(!job){
@@ -19,6 +20,7 @@ let getJobById = (req, res)=>{
 
 // http://localhost:3000/api/jobs
 let createJob = (req, res)=>{  
+
     let user_input = req.body
 
     const newJob = Job.create({
