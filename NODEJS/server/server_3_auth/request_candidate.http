@@ -1,0 +1,21 @@
+
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{  
+    "name": "ramesh",  
+    "email": "ram@gmail.com",  
+    "password": "ram@123"
+}
+
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{  
+    "email": "ram@gmail.com",  
+    "password": "ram@123"
+}
+
+###

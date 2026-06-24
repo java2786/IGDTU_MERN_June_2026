@@ -1,0 +1,64 @@
+GET http://localhost:3000/api/jobs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2JiOThhMWI2OWU4ZWFjMDRhNjBjZSIsIm5hbWUiOiJyYW1lc2giLCJyb2xlIjoiY2FuZGlkYXRlIiwiaWF0IjoxNzgyMjk5NzU1LCJleHAiOjE3ODI5MDQ1NTV9.NpjaR0EqZstnCSyg7Sq9YaXJCD-c6F2LzM3mb41tO5s
+
+###
+
+GET http://localhost:3000/api/jobs/2
+
+###
+
+POST http://localhost:3000/api/jobs
+Content-Type: application/json
+
+{  
+"company": "Wipro",  
+"location": "Kolkata",  
+"remote": true,  
+"skillsRequired": ["Python", "Excel", "PowerBI"],  
+"experienceRequired": 1,  
+"description": "Build interactive dashboards find gap areas to gaps ares for business growth."  
+}
+
+###
+
+POST http://localhost:3000/api/jobs
+Content-Type: application/json
+
+{  
+"title": "Data Analyst",  
+"location": "Kolkata",  
+"remote": true,  
+"skillsRequired": ["Python", "Excel", "PowerBI"],  
+"experienceRequired": 1,  
+"description": "Build interactive dashboards find gap areas to gaps ares for business growth."  
+}
+
+###
+
+POST http://localhost:3000/api/jobs
+Content-Type: application/json
+
+{  
+"title": "Data Analyst",  
+"company": "Wipro",  
+"location": "Kolkata",  
+"experienceRequired": 1,  
+"description": "Build interactive dashboards find gap areas to gaps ares for business growth."  
+}
+
+###
+
+POST http://localhost:3000/api/jobs
+Content-Type: application/json
+
+{  
+"title": "Data Analyst",  
+"company": "Wipro",  
+"location": "Kolkata",  
+"remote": true,  
+"skillsRequired": ["Python", "Excel", "PowerBI"],  
+"experienceRequired": 1,  
+"description": "Build interactive dashboards find gap areas to gaps ares for business growth."  
+}
+
+###
