@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { AuthUser } from "./../types"
+import { AuthUser } from "../types"
 
 interface AuthProps{
     onLoginSuccess: (token:string,user:AuthUser)=>void; 

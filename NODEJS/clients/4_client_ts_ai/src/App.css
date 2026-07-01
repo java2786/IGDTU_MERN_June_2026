@@ -1,0 +1,377 @@
+/* ============================================================
+   App.css — Job Portal Styles
+   Project: JobConnect India (React Beginner Project)
+   ============================================================
+   HOW TO USE:
+   - This file styles your entire app.
+   - Each section below matches a component in your project.
+   - Read the comments to understand what each rule does.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. GLOBAL RESET
+   A reset removes the default spacing browsers add on their own.
+   This gives us a clean, consistent starting point.
+   ------------------------------------------------------------ */
+
+* {
+  box-sizing: border-box; /* padding and border are included in width/height */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8; /* light blue-grey page background */
+  color: #374151;            /* dark grey — easy to read on screen */
+  line-height: 1.6;
+}
+
+
+/* ------------------------------------------------------------
+   2. NAVBAR
+   The top navigation bar that appears on every page.
+   ------------------------------------------------------------ */
+
+.navbar {
+  display: flex;           /* puts items in a row */
+  align-items: center;     /* vertically centers them */
+  gap: 16px;               /* space between each item */
+  background-color: #1a1f36; /* deep navy blue */
+  color: white;
+  padding: 16px 24px;
+}
+
+.navbar h1 {
+  font-size: 20px;
+  font-weight: 700;
+  flex-grow: 1;  /* pushes the buttons to the right side */
+  color: white;
+  margin: 0;
+}
+
+
+/* ------------------------------------------------------------
+   3. BUTTONS
+   Two styles: a filled button (primary) and an outlined button.
+   Use .btn on every button, then add .btn-primary or .btn-outline.
+
+   Example:
+     <button className="btn btn-primary">Apply Now</button>
+     <button className="btn btn-outline">Login</button>
+   ------------------------------------------------------------ */
+
+.btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.2s; /* smooth color change on hover */
+}
+
+.btn-primary {
+  background-color: #4f6ef7; /* bright blue */
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #3a56d4; /* slightly darker on hover */
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: white;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ------------------------------------------------------------
+   4. PAGE WRAPPER
+   Wraps the main content area to give it good width and spacing.
+   ------------------------------------------------------------ */
+
+.page-content {
+  padding: 24px;
+  max-width: 720px;        /* stops content getting too wide on big screens */
+}
+
+
+/* ------------------------------------------------------------
+   5. JOB CARD
+   Each job listing in the list view is a card.
+   ------------------------------------------------------------ */
+
+.job-card {
+  background-color: white;
+  border: 1px solid #e2e8f0;   /* light grey border */
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s; /* smooth hover effect */
+}
+
+.job-card:hover {
+  box-shadow: 0 4px 16px rgba(79, 110, 247, 0.12); /* soft blue shadow */
+  border-color: #4f6ef7;   /* blue border on hover */
+}
+
+.job-card h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1f36;
+  margin-bottom: 4px;
+}
+
+.company-name {
+  font-size: 14px;
+  color: #64748b;          /* muted grey */
+  margin-bottom: 12px;
+}
+
+
+/* ------------------------------------------------------------
+   6. SKILL TAGS
+   Small coloured pill-shaped labels showing required skills.
+   ------------------------------------------------------------ */
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;         /* tags wrap to next line if there are many */
+  gap: 8px;
+}
+
+.skill-tag {
+  display: inline-block;
+  background-color: #eff2ff; /* very light blue */
+  color: #3a56d4;            /* matching dark blue text */
+  padding: 4px 12px;
+  border-radius: 20px;       /* fully rounded pill shape */
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+/* ------------------------------------------------------------
+   7. JOB DETAIL PAGE
+   The full job description shown when a user clicks a job card.
+   ------------------------------------------------------------ */
+
+.job-detail {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 24px;
+  margin: 24px;
+}
+
+.job-detail h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1f36;
+  margin-bottom: 6px;
+}
+
+.job-description {
+  font-size: 14px;
+  color: #475569;
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+
+/* ------------------------------------------------------------
+   8. CANDIDATE PROFILE
+   The section where a candidate fills in their details.
+   ------------------------------------------------------------ */
+
+.candidate-profile {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 24px;
+  margin: 24px;
+}
+
+.candidate-profile h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1f36;
+  margin-bottom: 16px;
+}
+
+
+/* ------------------------------------------------------------
+   9. FORM ELEMENTS
+   Styles for labels, text inputs, and textareas.
+   ------------------------------------------------------------ */
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #4f6ef7;   /* blue border when user clicks into the field */
+}
+
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  resize: vertical;        /* user can drag to make it taller */
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+textarea:focus {
+  border-color: #4f6ef7;
+}
+
+
+/* ------------------------------------------------------------
+   10. NOTE / HELPER TEXT
+   Small italic text used for hints or status messages.
+   ------------------------------------------------------------ */
+
+.note {
+  font-size: 13px;
+  color: #94a3b8;          /* soft grey */
+  font-style: italic;
+  margin-top: 8px;
+}
+
+
+/* ------------------------------------------------------------
+   11. DIVIDER
+   A thin line to separate sections on a page.
+   ------------------------------------------------------------ */
+
+.divider {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 20px 0;
+}
+
+/* h1, h2, h3{
+  color: black;
+} */
+h1, h2, h3 {
+  color: var(--color-text-primary);
+}
+
+
+.job-detail button {
+  padding: 10px 20px;
+  border: 1px solid #3a56d4;       /* blue border, visible in both modes */
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: #4f6ef7;       /* matches your app's blue theme */
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.job-detail button:hover {
+  background-color: #3a56d4;       /* slightly darker on hover */
+}
+
+.navbar button {
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  transition: background-color 0.2s;
+}
+
+.navbar button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar button:active {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================================
+   COLOUR REFERENCE (for students)
+   ============================================================
+   #1a1f36  — Deep navy (navbar, headings)
+   #4f6ef7  — Bright blue (buttons, focus, hover borders)
+   #3a56d4  — Darker blue (button hover, tag text)
+   #eff2ff  — Very light blue (tag background)
+   #f0f4f8  — Off-white blue (page background)
+   #e2e8f0  — Light grey (card borders)
+   #64748b  — Medium grey (company name, secondary text)
+   #94a3b8  — Soft grey (note text)
+   #374151  — Dark grey (body text)
+   #1a1f36  — Near-black (headings)
+   ============================================================ */
+
+
+
+
+
+.auth-form, .post-job{
+  background: white;
+  max-width: 400px;
+  margin: 48px auto;
+  padding: 24px;
+  border-radius: 8px;
+}
+.auth-form h2{
+  color: black;
+}
+
+.auth-form input, .auth-form select, 
+.post-job input, .post-job textarea{
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 8px;
+} 
+
+.error-text{
+  color: rgb(199, 115, 115);
+  font-weight: bold;
+  font-size: 18px;
+  padding: 4px;
+}
+
+.link-button{
+  background: none;
+  border: none;
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+}
