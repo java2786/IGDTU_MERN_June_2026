@@ -1,0 +1,41 @@
+
+GET http://localhost:3000/api/candidate/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2QwYjQ1ZmMyM2RlOGE5YzUyMDk3ZSIsIm5hbWUiOiJyYW1lc2giLCJyb2xlIjoiY2FuZGlkYXRlIiwiaWF0IjoxNzgyMzg1NjE0LCJleHAiOjE3ODI5OTA0MTR9.psZHRuhrJQ8XRn2GYz06LjCQFlOT3KhCHurMuUOeGgg
+
+
+###
+
+POST http://localhost:3000/api/candidate/apply
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2QwYjQ1ZmMyM2RlOGE5YzUyMDk3ZSIsIm5hbWUiOiJyYW1lc2giLCJyb2xlIjoiY2FuZGlkYXRlIiwiaWF0IjoxNzgyMzg1NjE0LCJleHAiOjE3ODI5OTA0MTR9.psZHRuhrJQ8XRn2GYz06LjCQFlOT3KhCHurMuUOeGgg
+# Data Analyst
+
+{
+    "jobId": "6a3ba573690a53ab423d44b8"
+}
+###
+
+
+GET http://localhost:3000/api/candidate/match
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2QwYjQ1ZmMyM2RlOGE5YzUyMDk3ZSIsIm5hbWUiOiJyYW1lc2giLCJyb2xlIjoiY2FuZGlkYXRlIiwiaWF0IjoxNzgyMzg1NjE0LCJleHAiOjE3ODI5OTA0MTR9.psZHRuhrJQ8XRn2GYz06LjCQFlOT3KhCHurMuUOeGgg
+# Data Analyst
+
+{
+    "jobId": "6a3ba573690a53ab423d44b8"
+}
+
+###
+
+POST http://localhost:3000/api/candidate/me/resume
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2QwYjQ1ZmMyM2RlOGE5YzUyMDk3ZSIsIm5hbWUiOiJyYW1lc2giLCJyb2xlIjoiY2FuZGlkYXRlIiwiaWF0IjoxNzgyMzg1NjE0LCJleHAiOjE3ODI5OTA0MTR9.psZHRuhrJQ8XRn2GYz06LjCQFlOT3KhCHurMuUOeGgg
+# Data Analyst
+
+{
+    "resumeText": "I am a fresher with sql and power bi knowledge. I have 5 projects for each."
+}
+
+###
+

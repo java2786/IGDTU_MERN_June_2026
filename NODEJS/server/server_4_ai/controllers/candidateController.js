@@ -1,4 +1,6 @@
 const Candidate = require("../models/Candidate")
+const Job = require("./../models/Job")
+const {getMatchScore, parseResumeSkills} = require("./../services/aiService");
 
 exports.applyToJob = async (req, res) => {
     try {
@@ -50,3 +52,55 @@ exports.getMyProfile = async (req, res) => {
     }
 }
 
+
+
+exports.evaluateMatch = async (req, res) => {
+    try {
+
+        const candidate = await Candidate.findById(req.user.id);
+        const job = await Job.findById(req.body.jobId);
+
+        if(!candidate || !job){
+            return res.status(404).json({error: "Candidate or Job not found"});
+        }
+
+        const application = candidate.applications.find((app)=>app.jobId.toString()==req.body.jobId);
+
+        if(!application){
+            return res.status(400).json({error: "Apply to this job before requesting match score."});
+        }
+
+        const parsedSkills = await parseResumeSkills(candidate.resumeText);
+        candidate.parsedSkills = parsedSkills
+
+        const {matchScore,aiFeedback} = await getMatchScore(parsedSkills, job.skillsRequired, job.experienceRequired)
+
+        application.matchScore = matchScore;
+        application.aiFeedback = aiFeedback;
+        application.status = "evaluated";
+
+        await candidate.save();
+
+        res.json({success: true, parsedSkills, matchScore, aiFeedback})
+    } catch (err) {
+        return res.status(500).json({ error: "AI evaluation failed. Please try again.", err })
+    }
+}
+
+exports.updateResume = async (req, res) => {
+    try {
+        
+        // req -> res
+        // candiate -> update
+        // const resumeText = req.body.resumeText;
+        // const candidate = await Candidate.findByIdAndUpdate(
+        //     req.user.id,
+        //     {resumeText: resumeText},
+        //     {new: true}
+        // );
+        // res.json(candidate);
+        res.json({"success": true})
+    } catch (err) {
+        return res.status(500).json({ error: "Resume update failed.", err })
+    }
+}
